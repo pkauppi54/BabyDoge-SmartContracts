@@ -49,7 +49,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
         uint256 depositBlock; // Reward debt
     }
 
-    /*
+    /**
      * @notice Initialize the contract
      * @param _stakeToken: stake token address
      * @param _rewardToken: reward token address
@@ -91,7 +91,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Deposit staked tokens on behalf of msg.sender and collect reward tokens (if any)
      * @param tokenIds: Array of token index IDs to deposit
      */
@@ -100,7 +100,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Deposit staked tokens on behalf account and collect reward tokens (if any)
      * @param tokenIds: Array of token index IDs to deposit
      * @param account: future owner of deposit
@@ -110,7 +110,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Deposit staked tokens and collect reward tokens (if any)
      * @dev Requires approval for all to be set
      * @param tokenIds: Array of token index IDs to deposit
@@ -170,7 +170,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Withdraw staked tokens and collect reward tokens
      * @notice Withdrawal before minimum lock time is impossible
      * @param tokenIds: Array of token index IDs to withdraw
@@ -221,7 +221,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Withdraw staked tokens without caring about rewards rewards
      * @dev Needs to be for emergency.
      */
@@ -256,7 +256,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Calculates the last block number according to available funds
      */
     function getFinalBlockNumber() public view returns (uint256) {
@@ -266,7 +266,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Allows Owner to withdraw ERC20 tokens from the contract
      * @param _tokenAddress: Address of ERC20 token contract
      * @param _tokenAmount: Amount of tokens to withdraw
@@ -291,7 +291,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Sets start block of the pool
      * @param _startBlock: Number of start block
      */
@@ -305,7 +305,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Sets reward amount per block
      * @param _rewardPerBlock: Token amount to be distributed for each block
      */
@@ -317,7 +317,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Sets maximum amount of tokens 1 user is able to stake. 0 for no limit
      * @param _userStakeLimit: Maximum amount of tokens allowed to stake
      */
@@ -329,7 +329,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Sets minimum amount of blocks that should pass before user can withdraw his deposit
      * @param _minimumLockTime: Number of blocks
      */
@@ -342,7 +342,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Sets farm variables
      * @param _startBlock: Number of start block
      * @param _rewardPerBlock: Token amount to be distributed for each block
@@ -377,7 +377,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice View function to get deposited tokens array.
      * @param _user User address
      * @return tokenIds Deposited token IDs array
@@ -391,7 +391,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice View function to see pending reward on frontend.
      * @param _user: user address
      * @return Pending reward for a given user
@@ -410,7 +410,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Updates pool variables
      */
     function _updatePool() private {
@@ -432,7 +432,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Calculates number of blocks to pay reward for.
      * @param _from: Starting block
      * @param _to: Ending block
@@ -457,7 +457,7 @@ contract ERC721Farm is Ownable, ReentrancyGuard, IERC721Farm{
     }
 
 
-    /*
+    /**
      * @notice Calculates reward token income and transfers specific fee amount.
      * @notice Fee share and fee receiver are specified on Deployer contract
      */
