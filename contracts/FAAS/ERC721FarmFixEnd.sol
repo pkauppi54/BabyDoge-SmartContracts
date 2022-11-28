@@ -58,7 +58,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
         uint256 depositBlock; // Reward debt
     }
 
-    /*
+    /**
      * @notice Initialize the contract
      * @param _stakeToken: stake token address
      * @param _rewardToken: reward token address
@@ -100,7 +100,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Deposit staked tokens on behalf of msg.sender and collect reward tokens (if any)
      * @param tokenIds: Array of token index IDs to deposit
      */
@@ -109,7 +109,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Deposit staked tokens on behalf account and collect reward tokens (if any)
      * @param tokenIds: Array of token index IDs to deposit
      * @param account: future owner of deposit
@@ -119,7 +119,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Deposit staked tokens and collect reward tokens (if any)
      * @dev Requires approval for all to be set
      * @param tokenIds: Array of token index IDs to deposit
@@ -178,7 +178,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Withdraw staked tokens and collect reward tokens
      * @notice Withdrawal before minimum lock time is impossible
      * @param tokenIds: Array of token index IDs to withdraw
@@ -228,7 +228,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Withdraw staked tokens without caring about rewards rewards
      * @dev Needs to be for emergency.
      */
@@ -261,7 +261,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Calculates the reward per block shares amount
      * @return Amount of reward shares
      * @dev Internal function for smart contract calculations
@@ -274,7 +274,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Calculates the reward per block shares amount
      * @return Amount of reward shares
      * @dev External function for the front end
@@ -288,7 +288,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Calculates Price Per Reward of Reward token
      * @return Price Per Share of Reward token
      */
@@ -300,7 +300,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Allows Owner to withdraw ERC20 tokens from the contract
      * @param _tokenAddress: Address of ERC20 token contract
      * @param _tokenAmount: Amount of tokens to withdraw
@@ -326,7 +326,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Sets start block of the pool
      * @param _startBlock: Number of start block
      */
@@ -340,7 +340,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Sets end block of reward distribution
      * @param _endBlock: End block
      */
@@ -353,7 +353,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Sets maximum amount of tokens 1 user is able to stake. 0 for no limit
      * @param _userStakeLimit: Maximum amount of tokens allowed to stake
      */
@@ -365,7 +365,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Sets minimum amount of blocks that should pass before user can withdraw his deposit
      * @param _minimumLockTime: Number of blocks
      */
@@ -378,7 +378,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Sets farm variables
      * @param _startBlock: Number of start block
      * @param _endBlock: End block
@@ -413,7 +413,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Adds reward to the pool
      * @param amount: Amount of reward token
      */
@@ -434,7 +434,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice View function to get deposited tokens array.
      * @param _user User address
      * @return tokenIds Deposited token IDs array
@@ -448,7 +448,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice View function to see pending reward on frontend.
      * @param _user: user address
      * @return Pending reward for a given user
@@ -469,7 +469,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Updates pool variables
      */
     function _updatePool() private {
@@ -491,7 +491,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Calculates number of blocks to pay reward for.
      * @param _from: Starting block
      * @param _to: Ending block
@@ -515,7 +515,7 @@ contract ERC721FarmFixEnd is Ownable, ReentrancyGuard, IERC721FarmFixEnd{
     }
 
 
-    /*
+    /**
      * @notice Transfers specific amount of shares of reward tokens.
      * @param receiver: Receiver address
      * @param shares: Amount of shares
